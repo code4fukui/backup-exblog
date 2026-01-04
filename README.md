@@ -19,7 +19,7 @@ deno -A --env scrape.js
 IMG_BASE_URL=https://img.fukuno.com/imgexb/
 ```
 
-4. run imgdownload.js to download image as img dir and to make contents.csv
+4. run imgdownload.js to download image as img dir and to make contents.csv, images.csv
 ```sh
 deno -A --env imgdownload.js
 ```
