@@ -1,4 +1,5 @@
 import { fetchOrLoad, HTMLParser, CSV, nextTag, prevTag, table2json, table2csv, sleep } from "https://code4fukui.github.io/scrapeutil/scrapeutil.js";
+import { normalizeLink } from "./normalizeLink.js";
 
 const firsturl = Deno.env.get("FIRST_URL");
 const lasturl = firsturl.substring(0, firsturl.indexOf("/", 8)) + "//";
@@ -58,7 +59,7 @@ const list = [];
 for (let url = firsturl;;) {
   const html = await fetchOrLoad(url);
   //console.log(html);
-  const dom = HTMLParser.parse(html);
+  const dom = HTMLParser.parse(normalizeLink(html));
 
   const title = parseTitle(dom);
   const body = parseBody(dom);
