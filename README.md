@@ -1,5 +1,7 @@
 # backup-exblog
 
+> 日本語のREADMEはこちらです: [README.ja.md](README.ja.md)
+
 A backup tool for the Excite Blog platform.
 
 ## Features
