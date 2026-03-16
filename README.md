@@ -45,4 +45,4 @@ A backup tool for the Excite Blog platform.
    ```
 
 ## License
-This project is licensed under the [MIT License](LICENSE).
+MIT License — see [LICENSE](LICENSE).
