@@ -1,30 +1,48 @@
-# backup exblog
+# backup-exblog
 
-- a backup tool from excite blog
+> 日本語のREADMEはこちらです: [README.ja.md](README.ja.md)
 
-## usage
+A backup tool for the Excite Blog platform.
 
-1. edit .env to set the first URL
-```
-FIRST_URL=https://fukuno.exblog.jp/12466189/
-```
+## Features
+- Scrapes blog content and metadata from Excite Blog
+- Downloads associated images
+- Generates XML files for the blog posts
 
-2. run scrape.js to make contents_org.csv
-```sh
-deno -A --env scrape.js
-```
+## Requirements
+- [Deno](https://deno.land/) runtime
 
-3. edit .env to add prefix for img tag
-```
-IMG_BASE_URL=https://img.fukuno.com/imgexb/
-```
+## Usage
 
-4. run imgdownload.js to download image as img dir and to make contents.csv, images.csv
-```sh
-deno -A --env imgdownload.js
-```
+1. Edit the `.env` file to set the URL of the first blog post to scrape:
 
-5. run csv2xml.js to make xml dir
-```sh
-deno -A csv2xml.js
-```
+   ```
+   FIRST_URL=https://fukuno.exblog.jp/12466189/
+   ```
+
+2. Run the `scrape.js` script to fetch the blog content and generate `contents_org.csv`:
+
+   ```sh
+   deno -A --env scrape.js
+   ```
+
+3. Edit the `.env` file to add the base URL for the image downloads:
+
+   ```
+   IMG_BASE_URL=https://img.fukuno.com/imgexb/
+   ```
+
+4. Run the `imgdownload.js` script to download the images and generate `contents.csv` and `images.csv`:
+
+   ```sh
+   deno -A --env imgdownload.js
+   ```
+
+5. Run the `csv2xml.js` script to generate the XML files in the `xml/` directory:
+
+   ```sh
+   deno -A csv2xml.js
+   ```
+
+## License
+MIT License — see [LICENSE](LICENSE).
